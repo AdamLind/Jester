@@ -23,7 +23,7 @@ const BottomTabNavigator = () => {
         tabBarInactiveTintColor: 'grey',
         tabBarStyle: { 
           height: 55,
-          backgroundColor: '#c9f0d6'
+          backgroundColor: '#f2ffdf'
         },
         tabBarIcon: ({focused, color, size}) => {
             let iconName;

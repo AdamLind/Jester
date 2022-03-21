@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
+import { StyleSheet, View, Text, Image, ImageBackground, Pressable } from 'react-native';
 import HeaderStyles from '../../styles/HomeHeaders';
-import { LinearGradient } from 'expo-linear-gradient';
 
 
 
@@ -39,18 +38,19 @@ const Homepage = ({navigation}, props) => {
     
     return(
         <View style={styles.container}>
-            <LinearGradient
-                // Background Linear Gradient
-                colors={['transparent', 'rgba(250,140,0,0.3)']}
-                style={styles.background}
-            />
+
             <View style={styles.card}>
-                <Image 
+                <ImageBackground 
                     source={{ 
                     uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png' 
                     }}
                     style={styles.image}
-                />
+                >
+                    <View style={styles.cardInner}>
+                        <Text style={styles.name}>Elon Musk</Text>
+                        <Text style={styles.bio}>I love making rockets and fast cars.</Text>
+                    </View>
+                </ImageBackground>
             </View>
         </View>
     )
@@ -61,10 +61,9 @@ export default Homepage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'lightgray'
+    backgroundColor: '#f2ffdf'
   },
 
   background: {
@@ -77,13 +76,44 @@ const styles = StyleSheet.create({
 
   card: {
       width: "99%",
-      height: "98%"
+      height: "98%",
+      borderRadius: 10,
+
+      shadowColor: "#000",
+      shadowOffset: {
+          width: 0,
+          height: 5,
+      },
+      shadowOpacity: 0.36,
+      shadowRadius: 6.68,
+
+      elevation: 11,
   },
 
   image: {
       height: "100%",
       width: "100%",
-      borderRadius: 10
-  }
+      borderRadius: 10,
+      overflow: 'hidden',
+
+      justifyContent: 'flex-end',
+  },
+
+  cardInner: {
+    padding: 10,
+  },
+
+  name: {
+      fontSize: 30,
+      color: 'white',
+      fontWeight: 'bold',
+  },
+
+  bio: {
+    fontSize: 18,
+    color: 'white',
+    lineHeight: 25,
+
+  },
 
 });
