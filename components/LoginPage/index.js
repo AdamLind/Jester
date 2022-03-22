@@ -26,7 +26,7 @@ class LoginPage extends React.Component {
 
             <LinearGradient
                 // Background Linear Gradient
-                colors={['rgba(250,140,0,0.3)', 'transparent']}
+                colors={['transparent', 'rgba(250,140,0,0.3)']}
                 style={styles.background}
             />
 

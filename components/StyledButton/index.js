@@ -6,8 +6,8 @@ const StyledButton = (props) => {
 
     const { type, content, onPress } = props;
 
-    const backgroundColor = type === 'primary' ? '#FFFFFF' : '#ffec85'
-    const textColor = type === 'primary' ? '#ffec85' : '#FFFFFF'
+    const backgroundColor = type === 'primary' ? '#FFFFFF' : 'transparent'
+    const textColor = type === 'primary' ? '#ffca61' : '#FFFFFF'
     const borderWidth = type === 'primary' ? null : 5
     
 

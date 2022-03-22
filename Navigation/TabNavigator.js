@@ -2,8 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-
-import { HomeStackNavigator, PostStackNavigator, FriendsStackNavigator, ChatStackNavigator } from "./StackNavigator";
+import { HomeStackNavigator, PostStackNavigator, FriendsStackNavigator, ChatStackNavigator } from './PageBuilder'
 
 const Tab = createBottomTabNavigator();
 

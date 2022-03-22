@@ -48,7 +48,7 @@ const Homepage = ({navigation}, props) => {
                 >
                     <View style={styles.cardInner}>
                         <Text style={styles.name}>Elon Musk</Text>
-                        <Text style={styles.bio}>I love making rockets and fast cars.</Text>
+                        <Text style={styles.bio}>A dude with a rocket looking for a gal with some fuel.</Text>
                     </View>
                 </ImageBackground>
             </View>
@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'white',
     lineHeight: 25,
-
   },
 
 });
