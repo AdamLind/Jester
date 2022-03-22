@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { MainStackNavigator } from './Navigation/StackNavigator';
+import { SafeAreaView } from 'react-navigation';
 
 
 

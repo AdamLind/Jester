@@ -13,10 +13,11 @@ const HeaderStyles = StyleSheet.create({
     },
     
     logoutButton: {
+        top: 2,
         right: 10,
         height: 40,
         width: 70,
-        backgroundColor: '#ffec85',
+        backgroundColor: '#c9f0d6',
         borderRadius: 15,
         alignItems: 'center',
         justifyContent: 'center',
@@ -29,18 +30,19 @@ const HeaderStyles = StyleSheet.create({
     },
 
     profileButton: {
-        left: 10,
-        height: 40,
-        width: 40,
-        backgroundColor: '#ffec85',
+        top: 1,
+        left: 20,
+        height: 35,
+        width: 35,
+        backgroundColor: '#c9f0d6',
         borderRadius: 100,
         alignItems: 'center',
         justifyContent: 'center',
     },
 
-    profileButtonText: {
-        fontWeight: 'bold',
-        fontSize: 10,
+    profileImageContainer: {
+        height: '100%',
+        width: '100%'
     },
   
   });

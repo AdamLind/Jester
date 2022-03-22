@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import BottomTabNavigator from './TabNavigator';
-import LoginPage from "../components/LoginPage";
+import LoginPage from "../src/components/LoginPage";
 
 
 

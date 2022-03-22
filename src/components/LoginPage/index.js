@@ -30,7 +30,7 @@ class LoginPage extends React.Component {
                 style={styles.background}
             />
 
-            <Image style={styles.logo} source={require('../../assets/images/OtherLogo.png')}/>
+            <Image style={styles.logo} source={require('../../../assets/images/OtherLogo.png')}/>
 
             <View style={styles.buttonsContainer}>
                 <StyledButton 
