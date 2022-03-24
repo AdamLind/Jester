@@ -22,7 +22,7 @@ const BottomTabNavigator = () => {
         tabBarInactiveTintColor: 'grey',
         tabBarStyle: { 
           height: 55,
-          backgroundColor: '#f2ffdf'
+          backgroundColor: '#fff'
         },
         tabBarIcon: ({focused, color, size}) => {
             let iconName;
@@ -47,28 +47,24 @@ const BottomTabNavigator = () => {
         component={HomeStackNavigator}         
         options={{
             headerShown: false,
-            headerTitleAlign: 'center'
         }}
         />
       <Tab.Screen name={postName} 
         component={PostStackNavigator}
         options={{
             headerShown: false,
-            headerTitleAlign: 'center'
         }} 
       />
       <Tab.Screen name={friendsName} 
         component={FriendsStackNavigator} 
         options={{
             headerShown: false,
-            headerTitleAlign: 'center'
         }} 
       />
       <Tab.Screen name={chatName}
         component={ChatStackNavigator} 
         options={{
             headerShown: false,
-            headerTitleAlign: 'center'
         }} 
         />
     </Tab.Navigator>

@@ -14,7 +14,7 @@ const HomeStackNavigator = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Homepage" component={Homepage} 
-                options={{ headerTitleAlign: 'center' }}
+                options={{ headerShown: false }}
             />
         </Stack.Navigator>
     )
@@ -24,7 +24,7 @@ const HomeStackNavigator = () => {
       return (
           <Stack.Navigator>
               <Stack.Screen name="Postpage" component={Postpage} 
-                  options={{ headerTitleAlign: 'center' }}
+                  options={{ headerShown: false }}
               />
           </Stack.Navigator>
       )
@@ -34,7 +34,7 @@ const HomeStackNavigator = () => {
       return (
           <Stack.Navigator>
               <Stack.Screen name="FriendsList" component={FriendsList} 
-                  options={{ headerTitleAlign: 'center' }}
+                  options={{ headerShown: false }}
               />
           </Stack.Navigator>
       )
@@ -44,7 +44,7 @@ const HomeStackNavigator = () => {
       return (
           <Stack.Navigator>
               <Stack.Screen name="ChatList" component={ChatList}
-                  options={{ headerTitleAlign: 'center' }}
+                  options={{ headerShown: false }}
               />
           </Stack.Navigator>
       )

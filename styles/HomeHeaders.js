@@ -17,16 +17,18 @@ const HeaderStyles = StyleSheet.create({
         right: 10,
         height: 40,
         width: 70,
-        backgroundColor: '#c9f0d6',
+        backgroundColor: '#fed362',
         borderRadius: 15,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 3,
+        borderColor: '#ffec85',
     },
     
     logoutButtonText: {
         fontWeight: 'bold',
         fontSize: 15,
-        
+        color: '#fff',
     },
 
     profileButton: {
