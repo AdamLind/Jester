@@ -13,7 +13,7 @@ export default [
     talent: 'Cosplayer',
     image:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
-    bio: 'A dude with a rocket is looking for a gal with fuel',
+    bio: 'Just a dude with a rocket looking for a gal with fuel',
   },
   {
     id: '3',
