@@ -1,6 +1,6 @@
 import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
 
-export enum Genders {
+export enum Gender {
   MALE = "MALE",
   FEMALE = "FEMALE",
   OTHER = "OTHER"
@@ -20,6 +20,9 @@ export declare class Match {
   readonly id: string;
   readonly User1?: User | null;
   readonly User2?: User | null;
+  readonly User1ID: string;
+  readonly User2ID?: string | null;
+  readonly isMatch: boolean;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   readonly matchUser1Id?: string | null;
@@ -33,8 +36,9 @@ export declare class User {
   readonly name: string;
   readonly image?: string | null;
   readonly bio: string;
-  readonly gender: Genders | keyof typeof Genders;
-  readonly lookingFor: Genders | keyof typeof Genders;
+  readonly gender: Gender | keyof typeof Gender;
+  readonly lookingFor: Gender | keyof typeof Gender;
+  readonly sub: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<User, UserMetaData>);

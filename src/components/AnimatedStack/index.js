@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { Text, StyleSheet, View, StatusBar, Image } from 'react-native';
 import Animated, { 
     useSharedValue, 
     useAnimatedStyle, 
@@ -19,7 +19,7 @@ const SWIPE_VELOCITY = 800;
 
 const AnimatedStack = (props) => {
 
-    const { data, renderItem, onSwipeLeft, onSwipeRight } = props;
+    const { data, renderItem, onSwipeLeft, onSwipeRight, setCurrentUser } = props;
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [nextIndex, setNextIndex] = useState(currentIndex + 1);
@@ -97,14 +97,18 @@ const AnimatedStack = (props) => {
             );
 
             const onSwipe = event.velocityX > 0 ? onSwipeRight : onSwipeLeft;
-            runOnJS(onSwipe)(currentProfile);
+            runOnJS(onSwipe)();
         },
     });
 
     useEffect(() => {
         translateX.value = 0;
         setNextIndex(currentIndex + 1);
-    }, [currentIndex])
+    }, [currentIndex, translateX])
+
+    useEffect(() => {
+        setCurrentUser(currentProfile);
+    }, [currentProfile])
 
     return(
         <View style={styles.root}>
@@ -116,7 +120,7 @@ const AnimatedStack = (props) => {
             </View>
             )}
 
-            {currentProfile && (
+            {currentProfile ? (
             <PanGestureHandler onGestureEvent={gestureHandler}>
                 <Animated.View style={[styles.animatedCard, cardStyle]}>
                     <Animated.Image source={Like} style={[styles.like, likeStyle, {left: 10}]} resizeMode="contain" />                    
@@ -124,6 +128,11 @@ const AnimatedStack = (props) => {
                     {renderItem({ item: currentProfile })}
                 </Animated.View>
             </PanGestureHandler>
+            ) : (
+                <View style={styles.endOfStack}>
+                    <Image source={require('../../../assets/images/tinderImages/NOPE.png')} />
+                    <Text style={styles.endOfStackText}>danngg homie you really swiped through all our users and still didnt get a match... maybe you just ugly :(</Text>
+                </View>
             )}
             
             <StatusBar backgroundColor={'black'}/>
@@ -170,6 +179,14 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         flex: 1
+    },
+    endOfStack: {
+        width: 300,
+        alignItems: 'center'
+    },
+    endOfStackText: {
+        textAlign: 'center',
+        fontSize: 20
     },
 });
 

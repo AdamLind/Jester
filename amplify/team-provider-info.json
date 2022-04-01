@@ -1,15 +1,15 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-jester-staging-194602-authRole",
-      "UnauthRoleArn": "arn:aws:iam::895052025077:role/amplify-jester-staging-194602-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::895052025077:role/amplify-jester-staging-194602-authRole",
+      "AuthRoleName": "amplify-jester-staging-235443-authRole",
+      "UnauthRoleArn": "arn:aws:iam::895052025077:role/amplify-jester-staging-235443-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::895052025077:role/amplify-jester-staging-235443-authRole",
       "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-jester-staging-194602-deployment",
-      "UnauthRoleName": "amplify-jester-staging-194602-unauthRole",
-      "StackName": "amplify-jester-staging-194602",
-      "StackId": "arn:aws:cloudformation:us-west-1:895052025077:stack/amplify-jester-staging-194602/33d16ef0-ac74-11ec-aff0-06f76909f7d9",
-      "AmplifyAppId": "d3czqtl8q8v3dj"
+      "DeploymentBucketName": "amplify-jester-staging-235443-deployment",
+      "UnauthRoleName": "amplify-jester-staging-235443-unauthRole",
+      "StackName": "amplify-jester-staging-235443",
+      "StackId": "arn:aws:cloudformation:us-west-1:895052025077:stack/amplify-jester-staging-235443/9b535e40-afbb-11ec-93e0-0224a3726b27",
+      "AmplifyAppId": "dl4f0lr7bj6o7"
     }
   }
 }

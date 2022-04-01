@@ -1,6 +1,6 @@
 export default HOMIES = [
     {
-      title: 'New Homies',
+      title: 'New Hobby Homies',
       horizontal: true,
       data: [
         {

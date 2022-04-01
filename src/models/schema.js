@@ -38,6 +38,27 @@ export const schema = {
                         "targetName": "matchUser2Id"
                     }
                 },
+                "User1ID": {
+                    "name": "User1ID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "User2ID": {
+                    "name": "User2ID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "isMatch": {
+                    "name": "isMatch",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -129,7 +150,7 @@ export const schema = {
                     "name": "gender",
                     "isArray": false,
                     "type": {
-                        "enum": "Genders"
+                        "enum": "Gender"
                     },
                     "isRequired": true,
                     "attributes": []
@@ -138,8 +159,15 @@ export const schema = {
                     "name": "lookingFor",
                     "isArray": false,
                     "type": {
-                        "enum": "Genders"
+                        "enum": "Gender"
                     },
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "sub": {
+                    "name": "sub",
+                    "isArray": false,
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -187,8 +215,8 @@ export const schema = {
         }
     },
     "enums": {
-        "Genders": {
-            "name": "Genders",
+        "Gender": {
+            "name": "Gender",
             "values": [
                 "MALE",
                 "FEMALE",
@@ -197,5 +225,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "70cdcd0f340016f7eb50d5981b143aea"
+    "version": "18be457d43869824af1abd54d6d167ca"
 };

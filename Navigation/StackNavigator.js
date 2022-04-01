@@ -4,9 +4,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Pressable, View, ImageBackground, Image, StyleSheet, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import BottomTabNavigator from './TabNavigator';
-import LoginPage from "../src/components/LoginPage";
+import LoginPage from '../Navigation/Pages/LoginPage';
 
 import HeaderStyles from "../styles/HomeHeaders";
+import ProfileSetupScreen from "./Pages/ProfileSetupScreen";
 
 
 
@@ -29,7 +30,7 @@ const MainStackNavigator = () => {
       screenOptions={{
         headerTitle: props => <LogoTitle {...props} />,
         headerLeft: () => (
-            <Pressable style={HeaderStyles.profileButton} onPress={() => console.warn('not implemented yet')}>
+            <Pressable style={HeaderStyles.profileButton} onPress={() => navigation.navigate('ProfileScreen', { screen: 'ProfileScreen' })}>
                 <View style={HeaderStyles.profileImageContainer}>
                     <ImageBackground 
                         source={{ 
@@ -61,6 +62,11 @@ const MainStackNavigator = () => {
       <Stack.Screen 
         name="MainTabNavigator" 
         component={BottomTabNavigator}
+        options={{headerTitleAlign: 'center'}}
+      />
+      <Stack.Screen 
+        name="ProfileScreen" 
+        component={ProfileSetupScreen}
         options={{headerTitleAlign: 'center'}}
       />
     </Stack.Navigator>

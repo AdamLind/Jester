@@ -1,20 +1,59 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, View, StatusBar } from 'react-native';
 import Card from '../../src/components/Card';
-import users from '../../assets/users';
+import { DataStore, Auth } from 'aws-amplify';
+import {Match, User} from '../../src/models'
 
 import AnimatedStack from '../../src/components/AnimatedStack';
 
 const Homepage = () => {
+    const [users, setUsers] = useState([]);
+    const [currentUser, setCurrentUser] = useState(null);
+    const [me, setMe] = useState(null);
 
-    const onSwipeLeft = (user) => {
-        console.warn('swipe left: ', user.name)
+    useEffect(() => {
+        const getCurrentUser = async () => {
+            const user = await Auth.currentAuthenticatedUser();
+    
+            const dbUsers = await DataStore.query(
+                User, 
+                u => u.sub === user.attributes.sub
+            );
+            if (dbUsers.length == 0) {
+                console.warn('no hits')
+                return;
+            }
+            setMe(dbUsers[0]);
+        };
+        getCurrentUser();
+    }, [])
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const fetchedUsers = await DataStore.query(User);
+            setUsers(fetchedUsers)
+        }
+        fetchUsers();
+    }, [])
+
+    const onSwipeLeft = () => {
+        if (!currentUser || !me) {
+            return;
+        }
+        console.warn('swipe left: ', currentUser.name)
     }
 
     
-    const onSwipeRight = (user) => {
-        console.warn('swipe right: ', user.name)
+    const onSwipeRight = () => {
+        if (!currentUser || !me) {
+            return;
+        }
+        DataStore.save(new Match({
+            User1ID: me.id,
+            User2ID: currentUser.id,
+        }))
+        console.warn('swipe right: ', currentUser.name)
     }
 
     return(
@@ -22,6 +61,7 @@ const Homepage = () => {
             <AnimatedStack 
                 data={users}
                 renderItem={(({ item }) => <Card user={item} />)}
+                setCurrentUser={setCurrentUser}
                 onSwipeLeft={onSwipeLeft}
                 onSwipeRight={onSwipeRight}
                 />
