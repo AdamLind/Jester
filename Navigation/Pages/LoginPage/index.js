@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Image} from 'react-native';
 import styles from './styles';
-import StyledButton from '../StyledButton';
+import StyledButton from '../../../src/components/StyledButton';
 import { LinearGradient } from 'expo-linear-gradient';
 import { withNavigation } from 'react-navigation';
 

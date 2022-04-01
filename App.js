@@ -9,9 +9,13 @@ import config from './src/aws-exports';
 
 import { MainStackNavigator } from './Navigation/StackNavigator';
 
+Amplify.configure({
+  ...config,
+  Analytics: {
+    disabled: true
+  }
+});
 
-
-Amplify.configure(config);
 
 const App = () => {
 
